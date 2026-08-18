@@ -12,6 +12,10 @@ A small and simple FiveM resource for adding configurable weapon recoil.
 - No dependencies
 - MIT licensed
 
+## Preview
+
+https://github.com/user-attachments/assets/f7fbaaff-b251-4067-85f2-e0b3c4c72ec8
+
 ## Installation
 
 1. Download the repository and place the `rottaxyz-weaponrecoil` folder in your FiveM resources folder.
