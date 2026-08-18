@@ -1,12 +1,12 @@
 # rottaxyz-weaponrecoil
 
-A small and simple FiveM resource for reducing weapon camera recoil.
+A small and simple FiveM resource for adding configurable weapon recoil.
 
 ## Features
 
 - Per-weapon recoil control
 - Simple `config.lua` setup
-- Adjustable recoil multiplier
+- Adjustable recoil strength
 - Explosives can be left unchanged
 - Lightweight client-side script
 - No dependencies
@@ -33,12 +33,12 @@ All settings are in `config.lua`.
 Config.RecoilMultiplier = 0.35
 ```
 
-The value controls how much camera recoil is applied:
+The value controls the strength of the added camera recoil:
 
-- `1.00` = full configured recoil
-- `0.50` = half configured recoil
-- `0.35` = reduced recoil
-- `0.00` = no camera recoil
+- `1.00` = strong recoil
+- `0.50` = moderate recoil
+- `0.35` = light recoil
+- `0.00` = no added recoil
 
 ### Weapons
 
@@ -52,7 +52,7 @@ Config.Weapons = {
 }
 ```
 
-Set a weapon to `true` to apply the recoil setting, or `false` to leave it unchanged.
+Set a weapon to `true` to add recoil, or `false` to leave it unchanged.
 
 ## Resource structure
 
