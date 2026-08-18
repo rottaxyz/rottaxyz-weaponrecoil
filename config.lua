@@ -1,14 +1,14 @@
 Config = {}
 
--- Recoil multiplier applied to the camera shake.
--- 1.00 = full configured recoil
--- 0.50 = half configured recoil
--- 0.35 = reduced recoil
--- 0.00 = no camera recoil
+-- Recoil strength applied to configured weapons.
+-- 1.00 = strong recoil
+-- 0.50 = moderate recoil
+-- 0.25 = light recoil
+-- 0.00 = no added recoil
 Config.RecoilMultiplier = 0.35
 
--- Enable recoil reduction per weapon.
--- true  = apply recoil reduction
+-- Enable or disable added recoil per weapon.
+-- true  = add recoil
 -- false = leave the weapon unchanged
 Config.Weapons = {
     -- Pistols
