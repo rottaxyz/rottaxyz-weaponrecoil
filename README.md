@@ -1,32 +1,31 @@
 # rottaxyz-weaponrecoil
 
-A lightweight, standalone FiveM resource that reduces weapon camera recoil with a simple per-weapon configuration.
+A small and simple FiveM resource for reducing weapon camera recoil.
 
 ## Features
 
-- 🎯 Per-weapon recoil reduction
-- ⚙️ Simple `config.lua` configuration
-- 🎚️ Adjustable recoil multiplier
-- 💣 Explosives can be excluded from the reduction
-- 🚀 Lightweight client-side resource
-- 📦 No dependencies
-- 📄 MIT licensed
+- Per-weapon recoil control
+- Simple `config.lua` setup
+- Adjustable recoil multiplier
+- Explosives can be left unchanged
+- Lightweight client-side script
+- No dependencies
+- MIT licensed
 
 ## Installation
 
-1. Download or clone this repository into your FiveM `resources` folder.
-2. Make sure the resource folder is named `rottaxyz-weaponrecoil`.
-3. Add this to your `server.cfg`:
+1. Download the repository and place the `rottaxyz-weaponrecoil` folder in your FiveM resources folder.
+2. Add this to your `server.cfg`:
 
 ```cfg
 ensure rottaxyz-weaponrecoil
 ```
 
-4. Restart the resource or your server.
+3. Restart the resource or your server.
 
 ## Configuration
 
-All configuration is handled in `config.lua`.
+All settings are in `config.lua`.
 
 ### Recoil multiplier
 
@@ -34,16 +33,16 @@ All configuration is handled in `config.lua`.
 Config.RecoilMultiplier = 0.35
 ```
 
-The multiplier controls the strength of the camera shake used by the resource:
+The value controls how much camera recoil is applied:
 
-- `1.00` = normal camera shake
-- `0.50` = 50% of normal camera shake
-- `0.35` = 35% of normal camera shake
-- `0.00` = no camera shake
+- `1.00` = full configured recoil
+- `0.50` = half configured recoil
+- `0.35` = reduced recoil
+- `0.00` = no camera recoil
 
-### Enable or disable weapons
+### Weapons
 
-Each weapon can be enabled individually:
+Weapons can be enabled or disabled individually:
 
 ```lua
 Config.Weapons = {
@@ -53,7 +52,7 @@ Config.Weapons = {
 }
 ```
 
-Set a weapon to `true` to apply recoil reduction, or `false` to leave it unchanged.
+Set a weapon to `true` to apply the recoil setting, or `false` to leave it unchanged.
 
 ## Resource structure
 
@@ -69,12 +68,12 @@ rottaxyz-weaponrecoil/
 
 ## Compatibility
 
-Designed for FiveM and GTA V. The resource is standalone and does not require ESX, QBCore, Qbox, ox_lib, or any other framework.
+Standalone resource with no framework dependencies. Intended for FiveM servers, including Qbox setups. ESX and other frameworks have not been specifically tested.
 
 ## Support
 
-Found a bug or have a suggestion? Open an issue on GitHub.
+If you find a bug or have a suggestion, open an issue on GitHub.
 
 ## License
 
-MIT License — see [LICENSE](LICENSE).
+MIT License. See [LICENSE](LICENSE).
