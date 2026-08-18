@@ -1,9 +1,12 @@
 Config = {}
 
--- Recoil reduction percent (0.65 = 35% less recoil)
+-- Recoil multiplier applied to the camera shake.
+-- 1.00 = normal recoil | 0.35 = 65% less camera shake | 0.00 = no camera shake
 Config.RecoilMultiplier = 0.35
 
--- Each weapon: true = recoil reduced, false = normal
+-- Enable recoil reduction per weapon.
+-- true  = reduced recoil
+-- false = normal recoil
 Config.Weapons = {
     -- Pistols
     [`WEAPON_PISTOL`] = true,
@@ -48,7 +51,7 @@ Config.Weapons = {
     [`WEAPON_MARKSMANRIFLE`] = true,
     [`WEAPON_MARKSMANRIFLE_MK2`] = true,
 
-    -- Excluded explosives (false)
+    -- Explosives are intentionally left unchanged.
     [`WEAPON_GRENADE`] = false,
     [`WEAPON_STICKYBOMB`] = false,
     [`WEAPON_MOLOTOV`] = false,
