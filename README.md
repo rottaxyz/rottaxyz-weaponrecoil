@@ -1,50 +1,80 @@
 # rottaxyz-weaponrecoil
 
-A lightweight FiveM client-side script that reduces weapon recoil (camera shake) on a per-weapon basis. Simple, config-driven, and easy to tweak.
+A lightweight, standalone FiveM resource that reduces weapon camera recoil with a simple per-weapon configuration.
 
 ## Features
 
-- Reduces gameplay camera shake caused by weapon recoil
-- Per-weapon toggle — enable or disable reduction for any weapon individually
-- Single multiplier to control how strong the reduction is
-- Explosives (grenades, stickybombs, molotovs, etc.) are excluded by default
-- No dependencies, client-side only
+- 🎯 Per-weapon recoil reduction
+- ⚙️ Simple `config.lua` configuration
+- 🎚️ Adjustable recoil multiplier
+- 💣 Explosives can be excluded from the reduction
+- 🚀 Lightweight client-side resource
+- 📦 No dependencies
+- 📄 MIT licensed
 
 ## Installation
 
-1. Download or clone this repository into your server's `resources` folder.
-2. Rename the folder to `rottaxyz-weaponrecoil` (or leave as-is, just match the name you use below).
-3. Add the following to your `server.cfg`:
+1. Download or clone this repository into your FiveM `resources` folder.
+2. Make sure the resource folder is named `rottaxyz-weaponrecoil`.
+3. Add this to your `server.cfg`:
 
-   ```cfg
-   ensure rottaxyz-weaponrecoil
-   ```
+```cfg
+ensure rottaxyz-weaponrecoil
+```
 
-4. Restart your server or run `refresh` + `start rottaxyz-weaponrecoil` in the server console.
+4. Restart the resource or your server.
 
 ## Configuration
 
-All settings live in `config.lua`.
+All configuration is handled in `config.lua`.
+
+### Recoil multiplier
 
 ```lua
--- Recoil reduction percent (0.35 = the camera shake is scaled to 35% of normal)
 Config.RecoilMultiplier = 0.35
+```
 
--- Each weapon: true = recoil reduced, false = normal recoil
+The multiplier controls the strength of the camera shake used by the resource:
+
+- `1.00` = normal camera shake
+- `0.50` = 50% of normal camera shake
+- `0.35` = 35% of normal camera shake
+- `0.00` = no camera shake
+
+### Enable or disable weapons
+
+Each weapon can be enabled individually:
+
+```lua
 Config.Weapons = {
     [`WEAPON_PISTOL`] = true,
     [`WEAPON_CARBINERIFLE`] = true,
-    -- ...
+    [`WEAPON_GRENADE`] = false,
 }
 ```
 
-- **`Config.RecoilMultiplier`** — lower values mean less camera shake / less felt recoil. `1.0` would be no reduction, `0.0` would remove shake entirely.
-- **`Config.Weapons`** — a lookup table of weapon hashes. Set a weapon to `true` to apply the reduction, or `false` to leave it at normal recoil. Add or remove weapon hashes as needed.
+Set a weapon to `true` to apply recoil reduction, or `false` to leave it unchanged.
 
-## How it works
+## Resource structure
 
-The client script watches for the player shooting and, for any weapon marked `true` in the config, applies a scaled-down gameplay camera shake in place of the game's default recoil feel. Everything runs client-side — no server events, no exports needed.
+```text
+rottaxyz-weaponrecoil/
+├── client/
+│   └── client.lua
+├── config.lua
+├── fxmanifest.lua
+├── LICENSE
+└── README.md
+```
+
+## Compatibility
+
+Designed for FiveM and GTA V. The resource is standalone and does not require ESX, QBCore, Qbox, ox_lib, or any other framework.
+
+## Support
+
+Found a bug or have a suggestion? Open an issue on GitHub.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT License — see [LICENSE](LICENSE).
