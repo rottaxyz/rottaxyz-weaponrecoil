@@ -7,7 +7,7 @@ CreateThread(function()
             local weapon = GetSelectedPedWeapon(ped)
 
             if Config.Weapons[weapon] then
-                ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.2 * Config.RecoilMultiplier)
+                ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', Config.RecoilMultiplier)
             end
 
             wait = 0
